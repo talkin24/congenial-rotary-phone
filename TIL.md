@@ -31,3 +31,8 @@
    8. 학습/검증 실시
    9. 테스트 데이터로 추론
 
+
+### 1-3. 전이학습 구현
+- 데이터셋에서 augmentation도 함
+  - 에폭마다 다르게 적용
+  - ex) resized crop, horizontal flip ...
