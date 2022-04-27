@@ -36,3 +36,11 @@
 - 데이터셋에서 augmentation도 함
   - 에폭마다 다르게 적용
   - ex) resized crop, horizontal flip ...
+
+- glob을 이용하여 하위 디렉토리 파일 경로를 불러올 수 있음
+
+- Dataset 작성 시, 기존 Pytorch의 Dataset 상속
+  - 이때 `__len__`과 `__getitem__` 메서드 구현해야 함
+
+- 메모리가 부족한 경우 batch_size를 작게 수행해야 함
+- DataLoader 사용 시, train 시에는 shuffle=True, validation 시에는 shuffle=False
