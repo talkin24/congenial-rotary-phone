@@ -44,3 +44,11 @@
 
 - 메모리가 부족한 경우 batch_size를 작게 수행해야 함
 - DataLoader 사용 시, train 시에는 shuffle=True, validation 시에는 shuffle=False
+
+- 전이학습으로 학습하고 변화시킬 파라미터를 설정해야 함
+  - ex. `update_param_names = ["classifier.6.weight", "classifier.6.bias"]`
+- 학습시킬 파라미터 외에는 경사를 계산하지 않고 변하지 않도록 설정 -> 반드시 이래야 할까?
+  - `param.requires_grad = False`
+
+- 학습 시 손실은 미니배치 크기의 평균 값으로 나옴. 따라서 미니배치 크기를 곱해 미니배치의 총 손실을 구함
+  - `epoch_loss += loss.item() * inputs.size(0)`
